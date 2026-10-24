@@ -13,7 +13,7 @@ A machine-learning web app built for **Hack 5.0** at K.R. Mangalam University. T
 
 ## Quick Links
 
-- [Live Demo](https://YOUR-APP-NAME.streamlit.app)
+- [Live Demo](https://multiple-disease-prediction-app-by-ram0kr0singh.streamlit.app/)
 - [Screenshots](#screenshots)
 - [How It Works](#how-it-works)
 - [Features](#features)
