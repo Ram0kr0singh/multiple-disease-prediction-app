@@ -4,7 +4,7 @@
 
 A machine-learning web app built for **Hack 5.0** at K.R. Mangalam University. Three scikit-learn models sit behind a Streamlit interface that lets anyone load a sample patient, run a prediction, and see *why* the model answered the way it did — not just a yes/no.
 
-> Live demo → **https://multiple-disease-prediction-app-by-ram0kr0singh.streamlit.app/**
+> Live demo → **[https://multiple-disease-prediction-app-by-ram0kr0singh.streamlit.app/](https://multiple-disease-prediction-app-by-ram0kr0singh.streamlit.app/)**
 > *(free hosting sleeps when idle — click "wake up" and give it ~30 seconds)*
 
 > **Educational demo. Not a medical diagnosis or a medical device.** Predictions come from small public datasets and must never replace advice from a qualified doctor.
@@ -234,8 +234,8 @@ Every push to `main` redeploys automatically. The `theme_sync/` folder must stay
 
 | Contributor | GitHub |
 |---|---|
-| [Ram Kumar Singh](https://github.com/Ram0kr0singh) |
-| [Harsh Singh](https://github.com/Harsh0012-ux) |
+| Ram Kumar Singh | [@Ram0kr0singh](https://github.com/Ram0kr0singh) |
+| Harsh Singh | [@Harsh0012-ux](https://github.com/Harsh0012-ux) |
 
 Built by a two-person team.
 
