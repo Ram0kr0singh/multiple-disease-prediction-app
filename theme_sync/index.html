@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<script>
+  let lastTheme = null;
+
+  function sendMsg(type, data) {
+    window.parent.postMessage(Object.assign({ isStreamlitMessage: true, type: type }, data), "*");
+  }
+
+  function getThemeBase(theme) {
+    if (!theme) return null;
+    if (theme.base) return theme.base.toLowerCase();
+    if (theme.backgroundColor) {
+      let bg = theme.backgroundColor.trim();
+      if (bg.startsWith("#")) {
+        const hex = bg.slice(1);
+        const r = parseInt(hex.slice(0, 2), 16);
+        const g = parseInt(hex.slice(2, 4), 16);
+        const b = parseInt(hex.slice(4, 6), 16);
+        return (0.2126 * r + 0.7152 * g + 0.0722 * b) < 128 ? "dark" : "light";
+      }
+      if (bg.startsWith("rgb")) {
+        const m = bg.match(/\d+/g);
+        if (m && m.length >= 3) {
+          const lum = 0.2126 * Number(m[0]) + 0.7152 * Number(m[1]) + 0.0722 * Number(m[2]);
+          return lum < 128 ? "dark" : "light";
+        }
+      }
+    }
+    return null;
+  }
+
+  window.addEventListener("message", function(e) {
+    if (e.data && e.data.type === "streamlit:render") {
+      sendMsg("streamlit:setFrameHeight", { height: 0 });
+      const current = getThemeBase(e.data.theme);
+      if (current && current !== lastTheme) {
+        lastTheme = current;
+        sendMsg("streamlit:setComponentValue", { value: current });
+      }
+    }
+  });
+
+  sendMsg("streamlit:componentReady", { apiVersion: 1 });
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@ app.py              Streamlit UI (loads the 3 models, 3 pages)
 train_models.py     Retrains the models from dataset/ -> saved_models/
 saved_models/       *.sav pickled models (already regenerated for modern scikit-learn)
 dataset/            diabetes.csv, heart.csv, parkinsons.csv
-colab_files_to_train_models/   original training notebooks
+notebooks/          original training notebooks
 requirements.txt
 ```
 
